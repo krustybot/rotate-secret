@@ -15,10 +15,24 @@ sudo ln -s "$(pwd)/rotate-secret" /usr/local/bin/rotate-secret
 
 ## Requirements
 
+- **bash 4.0+** — macOS ships with 3.2; install via `brew install bash`
 - `op` — [1Password CLI](https://developer.1password.com/docs/cli/get-started/)
 - `age` — `brew install age` (macOS) or `apt install age` (Linux)
 - `ssh` — for deploying to scout
 - `tailscale` — or SSH access to `scout.fable-court.ts.net:2222`
+
+### macOS Setup
+
+```bash
+# Install newer bash (associative arrays require 4.0+)
+brew install bash
+
+# Use it explicitly
+/opt/homebrew/bin/bash rotate-secret fireworks --apply
+
+# Or add to PATH in ~/.zshrc
+export PATH="/opt/homebrew/bin:$PATH"
+```
 
 ## Usage
 
